@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Andenes por Ruta</title>
+    <!-- Usamos PapaParse para leer los archivos CSV directamente sin backend -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --badge-color: #e74c3c;
+            --bg-color: #f4f7f6;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: var(--bg-color); 
+            padding: 20px; 
+            color: #333; 
+            margin: 0;
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 20px auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+        }
+        h1 { text-align: center; color: var(--primary-color); margin-bottom: 5px; }
+        p.subtitle { text-align: center; color: #7f8c8d; margin-bottom: 30px; }
+        
+        .search-container { position: relative; margin-bottom: 25px; }
+        input[type="text"] { 
+            width: 100%; padding: 16px 20px 16px 45px; 
+            border: 2px solid #e0e6ed; border-radius: 8px; 
+            font-size: 16px; box-sizing: border-box; 
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus { border-color: var(--accent-color); outline: none; }
+        .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-size: 18px; }
+        
+        .status-message { text-align: center; font-weight: bold; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .loading { background-color: #fff3cd; color: #856404; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .hidden { display: none; }
+
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid #edf2f7; }
+        th { background-color: var(--primary-color); color: white; font-weight: 600; }
+        tr:hover { background-color: #f8fafc; }
+        .no-results { text-align: center; color: #7f8c8d; padding: 30px; font-style: italic; }
+        
+        .badge { 
+            background-color: var(--badge-color); color: white; 
+            padding: 6px 12px; border-radius: 20px; font-weight: bold; 
+        }
+        .route-id { font-family: monospace; font-size: 1.1em; color: var(--primary-color); font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📍 Asignación de Andenes</h1>
+        <p class="subtitle">Búsqueda de muelle de salida por número de viaje o conductor</p>
+        
+        <div id="statusBox" class="status-message loading">Cargando datos desde los archivos...</div>
+
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Escribe el Número de Ruta (Ej. 15352) o el Conductor..." onkeyup="filterTable()" disabled>
+        </div>
+        
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th># Ruta</th>
+                        <th>Conductor</th>
+                        <th>Vehículo</th>
+                        <th>Muelle / Andén</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Los datos aparecerán aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let combinedData = [];
+
+        async function init() {
+            try {
+                // 1. Configuración de nombres de archivo
+                // Asegúrate de nombrar tus archivos en GitHub exactamente así:
+                const urlViajes = 'Viajes.csv';
+                const urlMuelle = 'Muelle.csv';
+
+                // 2. Descargar archivos en paralelo
+                const [resViajes, resMuelle] = await Promise.all([
+                    fetch(urlViajes),
+                    fetch(urlMuelle)
+                ]);
+
+                if (!resViajes.ok || !resMuelle.ok) {
+                    throw new Error("No se pudieron encontrar los archivos CSV. Verifica que estén en el mismo repositorio.");
+                }
+
+                const textViajes = await resViajes.text();
+                const textMuelle = await resMuelle.text();
+
+                // 3. Procesar CSVs
+                const dataViajes = Papa.parse(textViajes, { header: true, skipEmptyLines: true }).data;
+                const dataMuelle = Papa.parse(textMuelle, { header: true, skipEmptyLines: true }).data;
+
+                // 4. Crear un diccionario (mapa) con los andenes
+                const muelleMap = {};
+                dataMuelle.forEach(row => {
+                    const idMuelleRaw = row['ID'];
+                    const anden = row['Muelle de salida'];
+                    if (idMuelleRaw && anden) {
+                        // Limpiar el ID (quita el " - 1", " - 2", etc.)
+                        const baseId = String(idMuelleRaw).split('-')[0].trim();
+                        muelleMap[baseId] = String(anden).trim();
+                    }
+                });
+
+                // 5. Cruzar datos (Viajes + Muelle)
+                dataViajes.forEach(row => {
+                    const idRuta = String(row['ID']).trim();
+                    if (idRuta) {
+                        combinedData.push({
+                            Ruta: idRuta,
+                            Conductor: (row['Conductor'] || '').trim(),
+                            Vehiculo: (row['Vehículo'] || '').trim(),
+                            Anden: muelleMap[idRuta] || 'No asignado'
+                        });
+                    }
+                });
+
+                // 6. Configurar Interfaz
+                document.getElementById('statusBox').classList.add('hidden');
+                document.getElementById('searchInput').disabled = false;
+                renderTable('');
+
+            } catch (error) {
+                console.error(error);
+                const statusBox = document.getElementById('statusBox');
+                statusBox.className = 'status-message error';
+                statusBox.textContent = "Error: Asegúrate de subir los archivos 'Viajes.csv' y 'Muelle.csv' en la misma carpeta que este archivo HTML.";
+            }
+        }
+
+        function renderTable(filter) {
+            const tbody = document.getElementById("tableBody");
+            tbody.innerHTML = "";
+            const lowerFilter = filter.toLowerCase().trim();
+            
+            const filteredData = combinedData.filter(item => 
+                item.Ruta.toLowerCase().includes(lowerFilter) || 
+                item.Conductor.toLowerCase().includes(lowerFilter)
+            );
+
+            if (filteredData.length === 0) {
+                tbody.innerHTML = "<tr><td colspan='4' class='no-results'>No se encontraron resultados</td></tr>";
+                return;
+            }
+
+            filteredData.forEach(item => {
+                const tr = document.createElement("tr");
+                const andenClass = item.Anden === 'No asignado' ? 'style="background-color: #95a5a6;"' : '';
+                
+                tr.innerHTML = `
+                    <td class="route-id">${item.Ruta}</td>
+                    <td><strong>${item.Conductor}</strong></td>
+                    <td style="color: #7f8c8d; font-size: 0.9em;">${item.Vehiculo}</td>
+                    <td><span class="badge" ${andenClass}>Andén ${item.Anden}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterTable() {
+            const query = document.getElementById("searchInput").value;
+            renderTable(query);
+        }
+
+        // Iniciar la lectura al cargar la página
+        window.onload = init;
+    </script>
+</body>
+</html>
