@@ -11,6 +11,7 @@
             --primary-color: #2c3e50;
             --accent-color: #3498db;
             --badge-color: #e74c3c;
+            --wave-color: #8e44ad;
             --bg-color: #f4f7f6;
         }
         body { 
@@ -21,7 +22,7 @@
             margin: 0;
         }
         .container { 
-            max-width: 900px; 
+            max-width: 950px; 
             margin: 20px auto; 
             background: white; 
             padding: 30px; 
@@ -55,6 +56,12 @@
         .badge { 
             background-color: var(--badge-color); color: white; 
             padding: 6px 12px; border-radius: 20px; font-weight: bold; 
+            display: inline-block; text-align: center;
+        }
+        .badge-wave {
+            background-color: var(--wave-color); color: white; 
+            padding: 4px 10px; border-radius: 15px; font-size: 0.85em; font-weight: bold;
+            display: inline-block;
         }
         .route-id { font-family: monospace; font-size: 1.1em; color: var(--primary-color); font-weight: bold; }
     </style>
@@ -76,6 +83,7 @@
                 <thead>
                     <tr>
                         <th># Ruta</th>
+                        <th>Oleada</th>
                         <th>Conductor</th>
                         <th>Vehículo</th>
                         <th>Muelle / Andén</th>
@@ -94,7 +102,6 @@
         async function init() {
             try {
                 // 1. Configuración de nombres de archivo
-                // Asegúrate de nombrar tus archivos en GitHub exactamente así:
                 const urlViajes = 'Viajes.csv';
                 const urlMuelle = 'Muelle.csv';
 
@@ -115,15 +122,21 @@
                 const dataViajes = Papa.parse(textViajes, { header: true, skipEmptyLines: true }).data;
                 const dataMuelle = Papa.parse(textMuelle, { header: true, skipEmptyLines: true }).data;
 
-                // 4. Crear un diccionario (mapa) con los andenes
+                // 4. Crear un diccionario (mapa) con los andenes y oleadas
                 const muelleMap = {};
                 dataMuelle.forEach(row => {
                     const idMuelleRaw = row['ID'];
                     const anden = row['Muelle de salida'];
                     if (idMuelleRaw && anden) {
-                        // Limpiar el ID (quita el " - 1", " - 2", etc.)
-                        const baseId = String(idMuelleRaw).split('-')[0].trim();
-                        muelleMap[baseId] = String(anden).trim();
+                        // Extraer el ID base y la oleada separados por "-"
+                        const parts = String(idMuelleRaw).split('-');
+                        const baseId = parts[0].trim();
+                        const oleada = parts.length > 1 ? parts[1].trim() : 'N/A';
+                        
+                        muelleMap[baseId] = {
+                            anden: String(anden).trim(),
+                            oleada: oleada
+                        };
                     }
                 });
 
@@ -131,11 +144,13 @@
                 dataViajes.forEach(row => {
                     const idRuta = String(row['ID']).trim();
                     if (idRuta) {
+                        const muelleInfo = muelleMap[idRuta];
                         combinedData.push({
                             Ruta: idRuta,
                             Conductor: (row['Conductor'] || '').trim(),
                             Vehiculo: (row['Vehículo'] || '').trim(),
-                            Anden: muelleMap[idRuta] || 'No asignado'
+                            Anden: muelleInfo ? muelleInfo.anden : 'No asignado',
+                            Oleada: muelleInfo ? muelleInfo.oleada : 'N/A'
                         });
                     }
                 });
@@ -164,16 +179,18 @@
             );
 
             if (filteredData.length === 0) {
-                tbody.innerHTML = "<tr><td colspan='4' class='no-results'>No se encontraron resultados</td></tr>";
+                tbody.innerHTML = "<tr><td colspan='5' class='no-results'>No se encontraron resultados</td></tr>";
                 return;
             }
 
             filteredData.forEach(item => {
                 const tr = document.createElement("tr");
                 const andenClass = item.Anden === 'No asignado' ? 'style="background-color: #95a5a6;"' : '';
+                const oleadaText = item.Oleada !== 'N/A' ? `Oleada ${item.Oleada}` : 'Sin definir';
                 
                 tr.innerHTML = `
                     <td class="route-id">${item.Ruta}</td>
+                    <td><span class="badge-wave">${oleadaText}</span></td>
                     <td><strong>${item.Conductor}</strong></td>
                     <td style="color: #7f8c8d; font-size: 0.9em;">${item.Vehiculo}</td>
                     <td><span class="badge" ${andenClass}>Andén ${item.Anden}</span></td>
