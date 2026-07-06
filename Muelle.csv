@@ -1,0 +1,68 @@
+﻿ID,Estado,Conductor,Conductor ( Teléfono1 ),Jornada,Tiempo,Paradas,Muelle de salida,# Paradas
+15529 - 1,Inicial,Emanuel Alejandro Reyna Gonzalez,8126900474              ,577 - 06/07/2026,,38,A,38
+15530 - 1,Inicial,Jose Antonio Marquez Olmos,4491872616              ,577 - 06/07/2026,,38,B,38
+15531 - 1,Inicial,Jose Angel Pedraza Soto,8129289957              ,577 - 06/07/2026,,38,C,38
+15532 - 1,Inicial,Israel Natanel Duarte Flores,81 2293 8795            ,577 - 06/07/2026,,38,D,38
+15533 - 1,Inicial,Carlos Alberto Martinez Rivera,8182706801              ,577 - 06/07/2026,,38,E,38
+15534 - 1,Inicial,Carlos Alberto Gonzalez Arreola,8121950958              ,577 - 06/07/2026,,38,F,38
+15535 - 1,Inicial,Francisco Antonio De Leon Lugo,8112405040              ,577 - 06/07/2026,,38,G,38
+15536 - 1,Inicial,María Eugenia Melchor Alonso,8115281227              ,577 - 06/07/2026,,38,H,38
+15537 - 1,Inicial,Laura Rosario Olmos Ramirez,5532329554              ,577 - 06/07/2026,,38,I,38
+15538 - 1,Inicial,Kevin Martinez Romero,8125068848              ,577 - 06/07/2026,,31,J,31
+15539 - 1,Inicial,Jair Bogar Lopez Cortes,55 4955 5670            ,577 - 06/07/2026,,44,K,44
+15540 - 1,Inicial,Carolina Garcia Gamez,81 1285 8189            ,577 - 06/07/2026,,38,L,38
+15541 - 1,Inicial,Juanita De Jesus Rubio Flores,8130552952              ,577 - 06/07/2026,,40,M,40
+15542 - 1,Inicial,Magda Enedelia Reyes De Leon,81 2124 3699            ,577 - 06/07/2026,,38,N,38
+15543 - 1,Inicial,Indira Yezmany Rubio Flores,81 3038 1895            ,577 - 06/07/2026,,40,O,40
+15544 - 1,Inicial,Omar Margarito Mendoza Ortiz,8110815498              ,577 - 06/07/2026,,38,AC,38
+15545 - 1,Inicio de Carga,Eduardo Calleja Vega,8114878681              ,577 - 06/07/2026,,38,AB,38
+15546 - 1,Inicio de Carga,Luis Fernando Flores Castro,6562340938              ,577 - 06/07/2026,,38,AA,38
+15547 - 2,Inicial,Eduardo Missael Garcia Olivarez,8122130860              ,577 - 06/07/2026,,39,Z,39
+15548 - 1,Inicial,Carlos Azael Correa Mendoza,8134000985              ,577 - 06/07/2026,,36,Y,36
+15549 - 2,Inicial,Jorge Armando Rodriguez Limas,8110106191              ,577 - 06/07/2026,,40,X,40
+15550 - 1,Inicial,Miguel Angel Hernandez Fortuna,8184615699              ,577 - 06/07/2026,,38,W,38
+15551 - 1,Inicial,Linda Deyanira Mejia Rivera,81-1976-6550            ,577 - 06/07/2026,,38,V,38
+15552 - 1,Inicial,Carlos Ivan Leija Rivera,8117306024              ,577 - 06/07/2026,,38,U,38
+15553 - 1,Inicial,Carlos Emilio Zavala Rojas,81 2575 7044            ,577 - 06/07/2026,,40,T,40
+15554 - 2,Inicial,Jose Roberto Lopez Martinez,8116136152              ,577 - 06/07/2026,,34,S,34
+15555 - 1,Inicial,Francisco Javier Sanchez Hernandez,8110601145              ,577 - 06/07/2026,,30,R,30
+15556 - 1,Inicial,Felipe de Jesus Garcia Cervantes,8119240928              ,577 - 06/07/2026,,38,Q,38
+15557 - 1,Inicial,Julio Santiago Rubio Cerrato,8184592183              ,577 - 06/07/2026,,36,P,36
+15558 - 2,Inicial,Jessica Elizabeth Peña Espinosa,81 4615 3867            ,577 - 06/07/2026,,31,A,31
+15559 - 2,Inicial,Gerardo Roman De la Rosa Martinez,8117422268              ,577 - 06/07/2026,,37,B,37
+15560 - 2,Inicial,Armando Velez Cura,8130757348              ,577 - 06/07/2026,,38,C,38
+15561 - 2,Inicial,Jose Roberto Estrada Avila,8123478918              ,577 - 06/07/2026,,38,D,38
+15562 - 2,Inicial,Carlos Enrique Vazquez Arzola,8118480435              ,577 - 06/07/2026,,40,E,40
+15563 - 2,Inicial,Jose Carlos Luna Hernandez,52 1 81 2189 2147       ,577 - 06/07/2026,,40,F,40
+15564 - 2,Inicial,Erick David Collazo Tristan,6142457709              ,577 - 06/07/2026,,45,G,45
+15565 - 2,Inicial,Erick Gildardo Encinas Sanchez,81 2630 4653            ,577 - 06/07/2026,,40,H,40
+15566 - 2,Inicial,Cesar Haziel Martinez Hernandez, ?8146089283            ,577 - 06/07/2026,,42,I,42
+15567 - 2,Inicial,Cesar Emilio Jaramillo Espinosa,8134150088              ,577 - 06/07/2026,,38,J,38
+15568 - 2,Inicial,Osvaldo Antonio Castillo Rubio,8129422183              ,577 - 06/07/2026,,43,K,43
+15569 - 2,Inicial,Ricardo Benjamin Garcia Hernandez,8129402756              ,577 - 06/07/2026,,40,L,40
+15570 - 2,Inicial,Adelita Alonso Rojas,81 1017 2509            ,577 - 06/07/2026,,44,M,44
+15571 - 2,Inicial,Erick Roman Franco Garcia,81 3645 2302            ,577 - 06/07/2026,,37,N,37
+15572 - 2,Inicial,Raul Morales Hernandez,8110043013              ,577 - 06/07/2026,,41,O,41
+15573 - 2,Inicial,Daniela Linares Gonzalez,81102758200             ,577 - 06/07/2026,,39,AC,39
+15574 - 2,Inicial,Jose Luis Alberto Davila Reyes,8111726731              ,577 - 06/07/2026,,41,AB,41
+15575 - 2,Inicial,Jaime Moroni Robledo Galdamez,8134554559              ,577 - 06/07/2026,,39,AA,39
+15576 - 1,Inicial,Raul de Jesus Perez Jimenez,8141478641              ,577 - 06/07/2026,,46,Z,46
+15577 - 2,Inicial,Ericka Yadira Moctezuma Leal,8110185281              ,577 - 06/07/2026,,40,Y,40
+15578 - 1,Inicial,Josue Guillermo Pamanes de Leon,667 959 8588            ,577 - 06/07/2026,,40,X,40
+15579 - 2,Inicial,Ramon Arredondo Valle,8117554992              ,577 - 06/07/2026,,42,W,42
+15580 - 2,Inicial,Francisco Arturo Cepeda Garza,,577 - 06/07/2026,,40,V,40
+15581 - 2,Inicial,Gerardo Antonio Mendez Enriquez,81 1496 9623            ,577 - 06/07/2026,,39,U,39
+15582 - 2,Inicial,Maria del Refugio Hernandez Cardenas,8132380012              ,577 - 06/07/2026,,41,T,41
+15583 - 1,Inicial,Fernando Azael Nuñez Garza,81 3129 6598            ,577 - 06/07/2026,,36,S,36
+15584 - 2,Inicial,Mauricio Hernandez Blando,8126799012              ,577 - 06/07/2026,,42,R,42
+15585 - 2,Inicial,Jose Benito Gonzalez Ruiz,,577 - 06/07/2026,,40,Q,40
+15586 - 2,Inicial,Eduardo Esparza Huerta,8122174036              ,577 - 06/07/2026,,43,P,43
+15587 - 3,Inicial,Erick Raymundo Rodriguez Magallan,81 2982 0614            ,577 - 06/07/2026,,46,A,46
+15588 - 3,Inicial,Jesus Hernandez Hernandez,6679685002              ,577 - 06/07/2026,,40,B,40
+15589 - 3,Inicial,Felipe Otero Gomez,8111751623              ,577 - 06/07/2026,,43,C,43
+15590 - 3,Inicial,Jose Manuel Flores Lopez,8124130222              ,577 - 06/07/2026,,41,D,41
+15591 - 3,Inicial,Jorge Patricio Arellano Vazquez,81 1061 2197            ,577 - 06/07/2026,,40,E,40
+15592 - 3,Inicial,Luis Alberto Cortez Segura,81 2358 3072            ,577 - 06/07/2026,,41,F,41
+15593 - 3,Inicial,Brandon David Carrizales Gutierrez,8135942184              ,577 - 06/07/2026,,40,G,40
+15594 - 3,Inicial,Jessica Lourdes Hernandez Aguirre,8114219623              ,577 - 06/07/2026,,39,H,39
+15595 - 3,Inicial,Jose Luis De la Rosa Acevedo,8188689813              ,577 - 06/07/2026,,44,I,44
