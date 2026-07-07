@@ -1,0 +1,55 @@
+﻿ID,Estado,Conductor,Conductor ( Teléfono1 ),Jornada,Tiempo,Paradas,Muelle de salida,# Paradas
+15643 - 3,Inicial,Kevin Alberto Arroyo Rodriguez,8127487163              ,580 - 07/07/2026,,32,A,32
+15644 - 1,Inicial,Francisco Antonio De Leon Lugo,8112405040              ,580 - 07/07/2026,,40,B,40
+15645 - 2,Inicial,Karla Ivett Licon Rodriguez,8116386689              ,580 - 07/07/2026,,40,C,40
+15646 - 1,Inicial,Jose Angel Pedraza Soto,8129289957              ,580 - 07/07/2026,,32,D,32
+15647 - 2,Inicial,Jose Luis Alberto Davila Reyes,8111726731              ,580 - 07/07/2026,,40,E,40
+15648 - 1,Inicio de Carga,Luis Fernando Flores Castro,6562340938              ,580 - 07/07/2026,,40,F,40
+15649 - 2,Inicial,Miguel Angel Hernandez Fortuna,8184615699              ,580 - 07/07/2026,,30,H,30
+15650 - 1,Inicial,Eduardo Missael Garcia Olivarez,8122130860              ,580 - 07/07/2026,,40,G,40
+15651 - 1,Inicio de Carga,Eduardo Calleja Vega,8114878681              ,580 - 07/07/2026,,36,I,36
+15652 - 1,Inicial,David Francisco Morales Marcos,8112112597              ,580 - 07/07/2026,,38,J,38
+15653 - 1,Inicial,Omar Margarito Mendoza Ortiz,8110815498              ,580 - 07/07/2026,,30,K,30
+15654 - 1,Inicial,Alvaro Eliud Cruz Garza,8124375306              ,580 - 07/07/2026,,30,L,30
+15655 - 1,Inicial,Mauricio Hernandez Blando,8126799012              ,580 - 07/07/2026,,40,M,40
+15656 - 1,Inicial,Osvaldo Antonio Castillo Rubio,8129422183              ,580 - 07/07/2026,,40,N,40
+15657 - 2,Inicial,Carlos Valencia Gallegos,8143600953              ,580 - 07/07/2026,,35,O,35
+15658 - 1,Inicial,Jose Roberto Estrada Avila,8123478918              ,580 - 07/07/2026,,30,AC,30
+15659 - 1,Inicial,Eduardo Esparza Huerta,8122174036              ,580 - 07/07/2026,,37,AB,37
+15660 - 1,Inicial,Adelita Alonso Rojas,81 1017 2509            ,580 - 07/07/2026,,40,AA,40
+15661 - 1,Inicial,Ricardo Benjamin Garcia Hernandez,8129402756              ,580 - 07/07/2026,,33,Z,33
+15662 - 1,Inicial,Juanita De Jesus Rubio Flores,8130552952              ,580 - 07/07/2026,,36,Y,36
+15663 - 1,Inicial,Jesus Uriel Soto Villegas,8126322962              ,580 - 07/07/2026,,32,X,32
+15664 - 1,Inicial,Erick Roman Franco Garcia,81 3645 2302            ,580 - 07/07/2026,,34,W,34
+15665 - 1,Inicial,Magda Enedelia Reyes De Leon,81 2124 3699            ,580 - 07/07/2026,,25,U,25
+15666 - 1,Inicial,Cesar Haziel Martinez Hernandez, ?8146089283            ,580 - 07/07/2026,,41,V,41
+15667 - 1,Inicial,Hector de Jesus Castillo Garza,,580 - 07/07/2026,,34,T,34
+15668 - 1,Inicial,Elber Alejandro Contreras Davila,81 8605 1804            ,580 - 07/07/2026,,47,S,47
+15669 - 1,Inicial,Jose Cruz Gonzalez Rodriguez,8110380656              ,580 - 07/07/2026,,34,R,34
+15670 - 1,Inicial,Jessica Lourdes Hernandez Aguirre,8114219623              ,580 - 07/07/2026,,42,Q,42
+15671 - 1,Inicial,Julio Santiago Rubio Cerrato,8184592183              ,580 - 07/07/2026,,48,P,48
+15672 - 2,Inicial,Jose Antonio Marquez Olmos,4491872616              ,580 - 07/07/2026,,31,A,31
+15673 - 3,Inicial,Jose alberto Barriga Magaña,8140259869              ,580 - 07/07/2026,,41,B,41
+15674 - 3,Inicial,Francisco Arturo Cepeda Garza,33 1366 7732            ,580 - 07/07/2026,,42,C,42
+15675 - 2,Inicial,Erik Martinez Escobedo,8138459769              ,580 - 07/07/2026,,46,D,46
+15676 - 3,Inicial,Francisco Javier Arriaga Cervantes,81 1984 0897            ,580 - 07/07/2026,,32,E,32
+15677 - 2,Inicial,Carlos Emilio Zavala Rojas,81 2575 7044            ,580 - 07/07/2026,,50,F,50
+15678 - 2,Inicial,Omar Alejandro Molar Venegas,8136452500              ,580 - 07/07/2026,,44,G,44
+15679 - 1,Inicial,Miroslava Abigail Rojas Rodriguez,81 8137 7816            ,580 - 07/07/2026,,40,H,40
+15680 - 2,Inicial,Erick David Collazo Tristan,6142457709              ,580 - 07/07/2026,,46,I,46
+15681 - 2,Inicial,Vicente Hector Lozano Lozano,8130589895              ,580 - 07/07/2026,,41,J,41
+15682 - 2,Inicial,Carlos Alberto Martinez Rivera,8182706801              ,580 - 07/07/2026,,35,K,35
+15683 - 2,Inicial,Marcos Uriel Rojas Chaidez,8180544965              ,580 - 07/07/2026,,35,L,35
+15684 - 2,Inicial,Gerardo Antonio Mendez Enriquez,81 1496 9623            ,580 - 07/07/2026,,49,M,49
+15685 - 2,Inicial,Raul de Jesus Perez Jimenez,8141478641              ,580 - 07/07/2026,,45,N,45
+15686 - 1,Inicial,Jose Manuel Flores Lopez,8124130222              ,580 - 07/07/2026,,34,O,34
+15687 - 2,Inicial,Jose Luis De la Rosa Acevedo,8188689813              ,580 - 07/07/2026,,39,AC,39
+15688 - 2,Inicial,Brandon David Carrizales Gutierrez,8135942184              ,580 - 07/07/2026,,42,AB,42
+15689 - 2,Inicial,Teresa Guadalupe Gonzalez Garcia,8125838545              ,580 - 07/07/2026,,33,AA,33
+15690 - 2,Inicial,Erick Gildardo Encinas Sanchez,81 2630 4653            ,580 - 07/07/2026,,36,Z,36
+15691 - 2,Inicial,Ramon Arredondo Valle,8117554992              ,580 - 07/07/2026,,40,Y,40
+15692 - 2,Inicial,Luis Alberto Cortez Segura,81 2358 3072            ,580 - 07/07/2026,,37,X,37
+15693 - 1,Inicial,Cesar Emilio Jaramillo Espinosa,8134150088              ,580 - 07/07/2026,,33,A,33
+15694 - 1,Inicial,Yuliana De la Rosa Cortez,8119746000              ,580 - 07/07/2026,,25,E,25
+15695 - 2,Inicial,María Eugenia Melchor Alonso,8115281227              ,580 - 07/07/2026,,33,B,33
+15696 - 1,Inicial,Daniela Linares Gonzalez,81102758200             ,580 - 07/07/2026,,30,C,30
